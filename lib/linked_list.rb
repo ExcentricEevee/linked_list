@@ -19,9 +19,7 @@ class LinkedList
   end
 
   def prepend(data)
-    node = Node.new(data)
-    node.next_node = head unless head.nil?
-    self.head = node
+    self.head = Node.new(data, head)
     self.size += 1
   end
 

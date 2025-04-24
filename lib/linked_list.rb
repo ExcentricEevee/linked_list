@@ -2,11 +2,12 @@
 # List of nodes that contain data and references each other
 # Pros: insertion/deletion is quick. Cons: lookup is slower
 class LinkedList
-  attr_accessor :head, :tail
+  attr_reader :head, :tail, :size
 
   def initialize
     @head = nil
     @tail = nil
+    @size = 0
     puts "LinkedList Initialized"
   end
 
@@ -14,11 +15,17 @@ class LinkedList
     node = Node.new(data)
     head.nil? ? self.head = node : tail.next_node = node
     self.tail = node
+    self.size += 1
   end
 
   def prepend(data)
     node = Node.new(data)
     node.next_node = head unless head.nil?
     self.head = node
+    self.size += 1
   end
+
+  private
+
+  attr_writer :head, :tail, :size
 end

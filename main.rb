@@ -9,3 +9,4 @@ list.append("turtle")
 list.prepend("cat")
 list.prepend("dog")
 p list
+p list.size

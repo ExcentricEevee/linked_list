@@ -15,4 +15,10 @@ class LinkedList
     head.nil? ? self.head = node : tail.next_node = node
     self.tail = node
   end
+
+  def prepend(data)
+    node = Node.new(data)
+    node.next_node = head unless head.nil?
+    self.head = node
+  end
 end

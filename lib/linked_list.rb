@@ -41,6 +41,16 @@ class LinkedList
     self.size -= 1
   end
 
+  def contains?(data)
+    temp = head
+    until temp.next_node.nil?
+      return true if temp.value == data
+
+      temp = temp.next_node
+    end
+    false
+  end
+
   private
 
   attr_writer :head, :tail, :size

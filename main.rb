@@ -8,5 +8,9 @@ list.append("snake")
 list.append("turtle")
 list.prepend("cat")
 list.prepend("dog")
-# p list
-p list.at(0)
+p list
+list.pop
+list.pop
+list.pop
+
+p list

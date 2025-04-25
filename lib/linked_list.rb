@@ -8,7 +8,6 @@ class LinkedList
     @head = nil
     @tail = nil
     @size = 0
-    puts "LinkedList Initialized"
   end
 
   def append(data)
@@ -32,6 +31,14 @@ class LinkedList
       temp = temp.next_node
     end
     temp
+  end
+
+  def pop
+    temp = head
+    temp = temp.next_node until temp.next_node == tail
+    temp.next_node = nil
+    self.tail = temp
+    self.size -= 1
   end
 
   private

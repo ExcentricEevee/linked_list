@@ -51,6 +51,19 @@ class LinkedList
     false
   end
 
+  def find(data)
+    temp = head
+    index = 0
+    until temp.nil?
+      return index if temp.value == data
+
+      temp = temp.next_node
+      index += 1
+    end
+
+    nil
+  end
+
   private
 
   attr_writer :head, :tail, :size

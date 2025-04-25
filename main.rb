@@ -8,7 +8,4 @@ list.append("snake")
 list.append("turtle")
 list.prepend("cat")
 list.prepend("dog")
-p list.find('dog') # 0
-p list.find('turtle') # 4
-p list.find('fox') # nil
-p list.contains?('turtle')
+puts list

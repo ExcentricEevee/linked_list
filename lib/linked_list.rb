@@ -64,6 +64,16 @@ class LinkedList
     nil
   end
 
+  def to_s
+    temp = head
+    str = ""
+    until temp.nil?
+      str << "( #{temp.value} ) -> "
+      temp = temp.next_node
+    end
+    str << "nil"
+  end
+
   private
 
   attr_writer :head, :tail, :size

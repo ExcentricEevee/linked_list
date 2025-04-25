@@ -23,6 +23,17 @@ class LinkedList
     self.size += 1
   end
 
+  # like Array, assumes counting from 0
+  def at(index)
+    temp = head
+    index.times do
+      return nil if temp.next_node.nil?
+
+      temp = temp.next_node
+    end
+    temp
+  end
+
   private
 
   attr_writer :head, :tail, :size

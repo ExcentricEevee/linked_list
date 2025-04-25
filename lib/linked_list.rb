@@ -1,3 +1,5 @@
+require_relative "node"
+
 # Data structure that functions as an array but in a different way.
 # List of nodes that contain data and references each other
 # Pros: insertion/deletion is quick. Cons: lookup is slower

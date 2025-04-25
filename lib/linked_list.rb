@@ -43,7 +43,7 @@ class LinkedList
 
   def contains?(data)
     temp = head
-    until temp.next_node.nil?
+    until temp.nil?
       return true if temp.value == data
 
       temp = temp.next_node

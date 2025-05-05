@@ -9,3 +9,4 @@ list.prepend("cat")
 list.prepend("dog")
 
 puts list
+p list.size

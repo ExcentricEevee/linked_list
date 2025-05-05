@@ -4,24 +4,32 @@ require_relative "node"
 # List of nodes that contain data and references each other
 # Pros: insertion/deletion is quick. Cons: lookup is slower
 class LinkedList
-  attr_reader :head, :tail, :size
+  attr_reader :head, :tail
 
   def initialize
     @head = nil
     @tail = nil
-    @size = 0
   end
 
   def append(data)
     node = Node.new(data)
     head.nil? ? self.head = node : tail.next_node = node
     self.tail = node
-    self.size += 1
   end
 
   def prepend(data)
     self.head = Node.new(data, head)
-    self.size += 1
+  end
+
+  def size
+    temp = head
+    count = 0
+    until temp.nil?
+      count += 1
+      temp = temp.next_node
+    end
+
+    count
   end
 
   # like Array, assumes counting from 0
@@ -45,8 +53,6 @@ class LinkedList
       temp.next_node = nil
       self.tail = temp
     end
-
-    self.size -= 1
   end
 
   def contains?(data)
@@ -101,5 +107,5 @@ class LinkedList
 
   private
 
-  attr_writer :head, :tail, :size
+  attr_writer :head, :tail
 end
